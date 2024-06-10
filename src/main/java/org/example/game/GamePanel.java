@@ -1,8 +1,6 @@
 package org.example.game;
 
-import org.example.entities.Enemy;
-import org.example.entities.GameObject;
-import org.example.entities.Tower;
+import org.example.entities.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +13,7 @@ import java.util.Iterator;
 public class GamePanel  extends JPanel {
     private List<GameObject> towers;
     private List<GameObject> enemies;
+    private List<Projectile> projectiles;
     private Timer timer;
 
     public GamePanel(){
@@ -22,9 +21,10 @@ public class GamePanel  extends JPanel {
         requestFocus();
         towers = new ArrayList<>();
         enemies = new ArrayList<>();
+        projectiles = new ArrayList<>();
 
-        towers.add(new Tower(100,100,40,40));
-        enemies.add(new Enemy(0,200,40,40));
+        towers.add(new Tower(600, 100, 40, 40, 400, 10, DamageType.PHYSICAL, 5, projectiles));
+        enemies.add(new Enemy(0, 200, 40, 40));
 
         timer = new Timer(16,new ActionListener() {
             @Override
@@ -48,6 +48,10 @@ public class GamePanel  extends JPanel {
         for (GameObject enemy : enemies) {
             enemy.draw(g);
         }
+
+        for (Projectile projectile : projectiles) {
+            projectile.draw(g);
+        }
     }
 
     public void update() {
@@ -61,16 +65,27 @@ public class GamePanel  extends JPanel {
             enemy.update();
 
             if (enemy.getX() > Game.WIDTH) {
-                iterator.remove(); // Entfernt den Gegner, wenn er das Spielfeld verlässt
+                iterator.remove();
             }
         }
 
-
         for (GameObject tower : towers) {
-            for (GameObject enemy : enemies) {
-                if (tower.getBounds().intersects(enemy.getBounds())) {
-                    iterator.remove(); // Entfernt den Gegner bei Kollision
+            if (tower instanceof Tower) {
+                for (GameObject enemy : enemies) {
+                    if (enemy instanceof Enemy) {
+                        ((Tower) tower).shoot((Enemy) enemy);
+                    }
                 }
+            }
+        }
+
+        Iterator<Projectile> projectileIterator = projectiles.iterator();
+        while (projectileIterator.hasNext()) {
+            Projectile projectile = projectileIterator.next();
+            projectile.update();
+
+            if (projectile.getX() > Game.WIDTH || projectile.getY() > Game.HEIGHT || projectile.getX() < 0 || projectile.getY() < 0) {
+                projectileIterator.remove();
             }
         }
 
