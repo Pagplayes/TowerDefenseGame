@@ -1,7 +1,10 @@
-package org.example.entities;
+package org.example.entities.Tower;
+
+import org.example.entities.utils.DamageType;
+import org.example.entities.Enemy.Enemy;
+import org.example.entities.utils.GameObject;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Tower  extends GameObject {

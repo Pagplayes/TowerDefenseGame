@@ -1,4 +1,4 @@
-package org.example.entities;
+package org.example.entities.utils;
 
 import java.awt.*;
 

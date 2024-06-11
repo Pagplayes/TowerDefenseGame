@@ -1,4 +1,7 @@
-package org.example.entities;
+package org.example.entities.Tower;
+
+import org.example.entities.utils.DamageType;
+import org.example.entities.utils.GameObject;
 
 import java.awt.*;
 

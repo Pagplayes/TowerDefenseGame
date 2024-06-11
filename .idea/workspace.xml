@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f75043ea-1ed1-4467-be67-6443ca656457" name="Changes" comment="#1 Grundgerüst">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Enemy/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/DamageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/utils/DamageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Enemy/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Enemy/Goal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Enemy/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Enemy/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Enemy/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Enemy/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/utils/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Level/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Level/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Level/LevelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Tower/Projectile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Tower/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/utils/Spawner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/utils/Spawner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/game/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/game/GamePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,21 +54,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Game.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Game.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.game.Game" />
@@ -96,7 +106,8 @@
       <option name="presentableId" value="Default" />
       <updated>1718039513948</updated>
       <workItem from="1718039515022" duration="1391000" />
-      <workItem from="1718046172018" duration="2046000" />
+      <workItem from="1718046172018" duration="3867000" />
+      <workItem from="1718095840884" duration="1526000" />
     </task>
     <task id="LOCAL-00001" summary="#1 Grundgerüst">
       <option name="closed" value="true" />
@@ -114,11 +125,38 @@
       <option name="project" value="LOCAL" />
       <updated>1718046306819</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="#1 Grundgerüst">
+      <option name="closed" value="true" />
+      <created>1718048284129</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718048284129</updated>
+    </task>
+    <task id="LOCAL-00004" summary="#1 Grundgerüst">
+      <option name="closed" value="true" />
+      <created>1718048303571</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718048303571</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#1 Grundgerüst" />
